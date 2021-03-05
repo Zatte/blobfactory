@@ -17,7 +17,7 @@ func TestNewMemory(t *testing.T) {
 	testCase1Content := []byte("testing string")
 
 	writer, err := wf(testCase1Path)
-	assert.NoError(t, err, "MemoryWriterFactory should never yeild errors")
+	assert.NoError(t, err, "MemoryWriterFactory should never yield errors")
 	writer.Write(testCase1Content)
 	_, err = rf(testCase1Path)
 	require.NoError(t, err)
@@ -26,7 +26,7 @@ func TestNewMemory(t *testing.T) {
 	testCase2Path := "subpath2"
 	testCase2Content := []byte("testing string2")
 	writer, err = wf(testCase2Path)
-	assert.NoError(t, err, "MemoryWriterFactory should never yeild errors")
+	assert.NoError(t, err, "MemoryWriterFactory should never yield errors")
 	writer.Write(testCase2Content)
 	_, err = rf(testCase2Path)
 	require.NoError(t, err)
