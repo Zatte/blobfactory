@@ -9,7 +9,7 @@ Methods to create (index/keyed) io.Writer(s) for various storage options.
 Apache 2.0
 
 ## Forked
-Forked and rewritten & cleaned version of [github.com/kvanticoss/goutils/blobfactory](https://github.com/kvanticoss/goutils/tree/master/blobfactory)
+Forked and rewritten & cleaned version of [github.com/kvanticoss/goutils/writerfactory](https://github.com/kvanticoss/goutils/tree/master/writerfactory)
 (remove most external deps and some cleanup)
 
 ## Why?
