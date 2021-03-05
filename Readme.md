@@ -1,5 +1,5 @@
-# WriterFactory
-Methods to create (index/keyed) io.Writer(s) for various storage options.
+# Blobfactory
+Methods to create (index/keyed) io.Writer(s) with various storage options.
 
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/zatte/blobfactory?style=flat-square)](https://goreportcard.com/report/github.com/zatte/blobfactory)
@@ -13,7 +13,7 @@ Forked and rewritten & cleaned version of [github.com/kvanticoss/goutils/writerf
 (remove most external deps and some cleanup)
 
 ## Why?
-Most of the factories are very short and simple with some sane defaults. Used by span writers (split writes into files ABC00001.json.gz to ABC99999.json.gz where each is at most 100Mb) with pluggable backends.
+Most of the factories are very short and simple with some sane defaults. Used by span writers (split writes into files `ABC00001.json.gz` to `ABC99999.json.gz` where each is at most 100Mb) with pluggable backends.
 
 ## Usage
 ```golang
@@ -21,6 +21,7 @@ Most of the factories are very short and simple with some sane defaults. Used by
   // local files
   readerFactory, writerFactory := NewDefaultLocal("/tmp/interimfiles")
   _, readerFactory, writerFactory := NewMem() // first arg is the map[string]*bytes.Buffer containing the raw data without mutex protection
+  writerFactory := NewDiscard() // nothing will ever be saved but implements all the interfaces
 
 
   //create a writer under "file.txt", and another one under "file2.txt"
